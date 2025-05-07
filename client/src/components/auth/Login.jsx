@@ -20,7 +20,7 @@ const Login = ({ setUserInfo }) => {
     try {
       setLoading(true);
       
-      const { data } = await axios.post('http://localhost:5000/api/auth/login', {
+      const { data } = await axios.post('https://link-saver-l8wb.onrender.com/api/auth/login', {
         email,
         password,
       });

@@ -26,7 +26,7 @@ const BookmarkDashboard = ({ userInfo }) => {
         },
       };
       
-      const { data } = await axios.get('http://localhost:5000/api/bookmarks/getbookmarks', config);
+      const { data } = await axios.get('https://link-saver-l8wb.onrender.com/api/bookmarks/getbookmarks', config);
       console.log("data", data)
       setBookmarks(data);
     } catch (error) {
@@ -52,7 +52,7 @@ const BookmarkDashboard = ({ userInfo }) => {
         },
       };
       
-      const { data } = await axios.post('http://localhost:5000/api/bookmarks/createbookmark', { url }, config);
+      const { data } = await axios.post('https://link-saver-l8wb.onrender.com/api/bookmarks/createbookmark', { url }, config);
       
       // Add the new bookmark to the beginning of the list
       setBookmarks([data, ...bookmarks]);
@@ -79,7 +79,7 @@ const BookmarkDashboard = ({ userInfo }) => {
         },
       };
       
-      await axios.delete(`http://localhost:5000/api/bookmarks/deletebookmark/${id}`, config);
+      await axios.delete(`https://link-saver-l8wb.onrender.com/api/bookmarks/deletebookmark/${id}`, config);
       
       // Update bookmarks list after successful deletion
       setBookmarks(bookmarks.filter(bookmark => bookmark._id !== id));
